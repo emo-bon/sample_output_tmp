@@ -1,0 +1,75 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+@base <http://data.emobon.embrc.eu/observatory-lmo-crate/water/observatory/LMO> . 
+
+<> 
+    a emobon:Observatory ; 
+    emobon:sampleType emobon:Water ;
+    emobon:observatoryId 'LMO'^^xsd:string ;
+    emobon:observatorySampleId 'LMO Wa'^^xsd:string ; 
+
+    dct:isPartOf [
+        a schema:Project ;
+        schema:name 'EMOBON'^^xsd:string ;
+        schema:description "The EMO BON project"^^xsd:string ;
+        emobon:enaProjAccNum 'PRJEB51688'^^xsd:anyURI ;
+    ] ;
+    emobon:siteInfo 'At the LMO station we have been sampling (essentially twice monthly) for a diverse set of microbial evology variables since March 2011 (now at 361 sampling occasions). This includes measures of Bacterial abundance, Bacterial production, Inorganic nutrients and DOC, Chl a, phytoplankton composition (microscopy). We have also done 16S (all years) and 18S (several years) gene amplicon sequencing and metagenomics and metatranscriptomics analyses (5 years in total). Site has not participated in Ocean Sampling Day. Harmful algal blooms occur nearly every summer in the form of cyanobacterial blooms (especially Nodularia spumigena). There are three main periods of elevated Chl a: spring bloom in April (diatoms and dinoflagellates), summer bloom in July/August (cyanobacteria), and autumn bloom in Sept/Oct (diatoms). In the nearby coastal bays we investigate the influence of climate warming on microbial communities in water and sediments.'^^xsd:string ;
+    emobon:broadBiome  'marine biome [ENVO:00000447]'^^xsd:string;
+    emobon:localBiome 'marine water body [ENVO:00001999]'^^xsd:string;
+    emobon:marineRegionName 'Baltic Sea'^^xsd:string ;
+    emobon:marineRegion '2401'^^xsd:anyURI ;
+    emobon:marineRegionName 'Swedish part of the Baltic Sea'^^xsd:string ;
+    emobon:marineRegion '25678'^^xsd:anyURI ;
+    emobon:marineRegionName 'Swedish part of the Baltic Sea'^^xsd:string ;
+    emobon:marineRegion '25678'^^xsd:anyURI ;
+    emobon:geoLocation [ 
+        a sf:Point ; 
+        geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point (56.916904 17.050178)" ;
+    ]; 
+    schema:contactPoint [ 
+        a emobon:Organization ;
+        schema:legalName 'Linnaeus University'^^xsd:string ;
+        emobon:edmoId '4812'^^xsd:anyURI ;
+        schema:address [
+            a schema:PostalAddress ;
+            schema:addressCountry 'Sweden'^^xsd:string ; 
+        schema:member [
+            a schema:Person ;
+            schema:name 'Jarone Pinhassi'^^xsd:string ;
+            schema:email 'Jarone.pinhassi@lnu.se'^^xsd:string ;
+            schema:identifier '0000-0002-6405-1347'^^xsd:anyURI ;
+        ]
+        ] ; 
+    ] ;
+    emobon:waterColumnDepth '41'^^xsd:integer ;
+    emobon:originCountry 'Sweden'^^xsd:string ;
+    emobon:enaStudyAccNum 'PRJEB64705'^^xsd:anyURI ;
+    emobon:hasMixsPackage 'water'^^xsd:string ; 
+.
+
+
+<http://marineregions.org/mrgid/2401>
+    mr:contains <http://marineregions.org/mrgid/25678> ;
+.
+
+<http://marineregions.org/mrgid/25678>
+    mr:contains <http://marineregions.org/mrgid/25678> ;
+    mr:isPartOf <http://marineregions.org/mrgid/2401> ; 
+.
+
+<http://marineregions.org/mrgid/25678>
+    mr:isPartOf <http://marineregions.org/mrgid/25678> ;
+.

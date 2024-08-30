@@ -1,0 +1,75 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+@base <http://data.emobon.embrc.eu/observatory-pieplentzia-crate/water/observatory/PiEPlentzia> . 
+
+<> 
+    a emobon:Observatory ; 
+    emobon:sampleType emobon:Water ;
+    emobon:observatoryId 'PiEPlentzia'^^xsd:string ;
+    emobon:observatorySampleId 'PiEPlentzia Wa'^^xsd:string ; 
+
+    dct:isPartOf [
+        a schema:Project ;
+        schema:name 'EMOBON'^^xsd:string ;
+        schema:description "The EMO BON project"^^xsd:string ;
+        emobon:enaProjAccNum ''^^xsd:anyURI ;
+    ] ;
+    emobon:siteInfo 'The selected sampling site is in the middle of the Plentzia bay. It is located in the Butroe stuary (Basque Coast, Southern Bay of Biscay). The same site has been usually sampled as control location in pollution monitoring programs.  Monitoring activities in the area include: chemical burden metals and PAHs (sediment and molluscs), acidification, zoo- and phytoplankton diversity, biological effects monitoring'^^xsd:string ;
+    emobon:broadBiome  'marine biome [ENVO:00000447]'^^xsd:string,  'estuarine biome [ENVO:01000020]'^^xsd:string;
+    emobon:localBiome 'marine pelagic feature [ENVO:01000044]'^^xsd:string, 'marine water body [ENVO:00001999]'^^xsd:string, 'harbor[ENVO:00000463]'^^xsd:string;
+    emobon:marineRegionName 'North Atlantic Ocean'^^xsd:string ;
+    emobon:marineRegion '1912'^^xsd:anyURI ;
+    emobon:marineRegionName 'Bay of Biscay'^^xsd:string ;
+    emobon:marineRegion '2359'^^xsd:anyURI ;
+    emobon:marineRegionName 'Abra de Bilbao'^^xsd:string ;
+    emobon:marineRegion '17355'^^xsd:anyURI ;
+    emobon:geoLocation [ 
+        a sf:Point ; 
+        geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point (43.416151 -2.955807)" ;
+    ]; 
+    schema:contactPoint [ 
+        a emobon:Organization ;
+        schema:legalName 'Research Centre for Experimental Marine Biology and Biotechnology, Plentzia Marine Station'^^xsd:string ;
+        emobon:edmoId '2167'^^xsd:anyURI ;
+        schema:address [
+            a schema:PostalAddress ;
+            schema:addressCountry 'Spain'^^xsd:string ; 
+        schema:member [
+            a schema:Person ;
+            schema:name ''^^xsd:string ;
+            schema:email 'oihane.diazdecerio@ehu.eus'^^xsd:string ;
+            schema:identifier '0000-0002-5605-8434'^^xsd:anyURI ;
+        ]
+        ] ; 
+    ] ;
+    emobon:waterColumnDepth '15'^^xsd:integer ;
+    emobon:originCountry 'Spain'^^xsd:string ;
+    emobon:enaStudyAccNum ''^^xsd:anyURI ;
+    emobon:hasMixsPackage 'water'^^xsd:string ; 
+.
+
+
+<http://marineregions.org/mrgid/1912>
+    mr:contains <http://marineregions.org/mrgid/2359> ;
+.
+
+<http://marineregions.org/mrgid/2359>
+    mr:contains <http://marineregions.org/mrgid/17355> ;
+    mr:isPartOf <http://marineregions.org/mrgid/1912> ; 
+.
+
+<http://marineregions.org/mrgid/17355>
+    mr:isPartOf <http://marineregions.org/mrgid/2359> ;
+.

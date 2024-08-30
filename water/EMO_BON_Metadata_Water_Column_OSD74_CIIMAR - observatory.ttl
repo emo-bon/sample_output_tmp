@@ -1,0 +1,75 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+@base <http://data.emobon.embrc.eu/observatory-osd74-crate/water/observatory/OSD74> . 
+
+<> 
+    a emobon:Observatory ; 
+    emobon:sampleType emobon:Water ;
+    emobon:observatoryId 'OSD74'^^xsd:string ;
+    emobon:observatorySampleId 'OSD74 Wa'^^xsd:string ; 
+
+    dct:isPartOf [
+        a schema:Project ;
+        schema:name 'EMOBON'^^xsd:string ;
+        schema:description "The EMO BON project"^^xsd:string ;
+        emobon:enaProjAccNum 'PRJEB51688'^^xsd:anyURI ;
+    ] ;
+    emobon:siteInfo 'This site participated in OSD2014, OSD2015 and OSD2016 during MicroB3 project and in OSD 2018 during ASSEMBLE Plus. This is a station located in the mouth of the Douro Estuary, with annual phytoplankton blooms occurring during spring. In this area there are several recreation and fishing activities.'^^xsd:string ;
+    emobon:broadBiome  'marine biome [ENVO:00000447]'^^xsd:string,  'marine pelagic biome [ENVO:01000023]'^^xsd:string,  'estuarine biome [ENVO:01000020]'^^xsd:string;
+    emobon:localBiome 'marine pelagic feature [ENVO:01000044]'^^xsd:string, 'marine water body [ENVO:00001999]'^^xsd:string, 'costal water body [ENVO:02000049]'^^xsd:string;
+    emobon:marineRegionName 'Atlantic Ocean'^^xsd:string ;
+    emobon:marineRegion '1902'^^xsd:anyURI ;
+    emobon:marineRegionName 'North Atlantic Ocean'^^xsd:string ;
+    emobon:marineRegion '1912'^^xsd:anyURI ;
+    emobon:marineRegionName 'Porto Valley'^^xsd:string ;
+    emobon:marineRegion '4888'^^xsd:anyURI ;
+    emobon:geoLocation [ 
+        a sf:Point ; 
+        geo:asWKT "<http://www.opengis.net/def/crs/OGC/1.3/CRS84> Point (41.146528 -8.666639)" ;
+    ]; 
+    schema:contactPoint [ 
+        a emobon:Organization ;
+        schema:legalName 'Interdisciplinary Centre of Marine and Environmental Research'^^xsd:string ;
+        emobon:edmoId '1626'^^xsd:anyURI ;
+        schema:address [
+            a schema:PostalAddress ;
+            schema:addressCountry 'Portugal'^^xsd:string ; 
+        schema:member [
+            a schema:Person ;
+            schema:name 'Catarina Magalhães'^^xsd:string ;
+            schema:email 'cmagalhaes@ciimar.up.pt'^^xsd:string ;
+            schema:identifier '0000-0001-9576-2398'^^xsd:anyURI ;
+        ]
+        ] ; 
+    ] ;
+    emobon:waterColumnDepth '1'^^xsd:integer ;
+    emobon:originCountry 'Portugal'^^xsd:string ;
+    emobon:enaStudyAccNum 'PRJEB51659'^^xsd:anyURI ;
+    emobon:hasMixsPackage 'water'^^xsd:string ; 
+.
+
+
+<http://marineregions.org/mrgid/1902>
+    mr:contains <http://marineregions.org/mrgid/1912> ;
+.
+
+<http://marineregions.org/mrgid/1912>
+    mr:contains <http://marineregions.org/mrgid/4888> ;
+    mr:isPartOf <http://marineregions.org/mrgid/1902> ; 
+.
+
+<http://marineregions.org/mrgid/4888>
+    mr:isPartOf <http://marineregions.org/mrgid/1912> ;
+.

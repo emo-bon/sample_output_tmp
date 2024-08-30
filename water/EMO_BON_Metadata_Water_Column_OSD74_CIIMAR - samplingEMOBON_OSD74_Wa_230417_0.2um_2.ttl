@@ -1,0 +1,133 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+@base <http://data.emobon.embrc.eu/observatory-osd74-crate/water/sampling/EMOBON_OSD74_Wa_230417_0.2um_2> . </observatory-osd74-crate/water/sampling/OSD74_Wa_230417>
+    a sosa:Sampling, prov:Activity ;  
+    
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime '2023-04-17'^^xsd:string ; 
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Eva Lopes; Ana Gomes'^^xsd:string ;
+    ] ;
+    
+    sosa:resultTime '2023-04-17'^^xsd:string ;     
+    sosa:madeBySampler 'Bucket'^^xsd:string ;
+    sosa:usedProcedure [
+        a sosa:Procedure ;
+        rdfs:label 'WaSOP1'^^xsd:string ;
+        rdfs:comment 'We used a peristaltic pump for filtration'^^xsd:string ;
+        ] ;
+    emobon:tidalStage 'high_tide'^^xsd:string ;
+    emobon:samplingDepth '1'^^xsd:string ; 
+    emobon:waterColumnDepth '1'^^xsd:string ; 
+    emobon:originCountry 'Portugal'^^xsd:string ;
+    
+    sosa:hasFeatureOfInterest 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:hasFeatureOfInterest 'metagenome'^^xsd:string ;
+    sosa:hasFeatureOfInterest '1874687'^^xsd:anyURI ; 
+    sosa:hasFeatureOfInterest ''^^xsd:string ;
+    
+    sosa:hasResult </observatory-osd74-crate/water/measured/EMOBON_OSD74_Wa_230417_0.2um_2> ;
+.
+</observatory-osd74-crate/water/measured/EMOBON_OSD74_Wa_230417_0.2um_2>
+    a sosa:Sample, prov:Entity ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '1874687'^^xsd:anyURI ; 
+    
+    sosa:hasResult <> ;
+.
+<> 
+    a sosa:Sample, prov:Entity ;
+    
+    rdfs:label 'EMOBON_OSD74_Wa_170423_0.2µm_(2)'^^xsd:string ;
+    dct:description 'EMOBON metagenome water sample from station OSD74 collected on 2023-04-17 size fraction 0.2um'^^xsd:string ;
+    emobon:sampleReplicate '2'^^xsd:string ;
+    emobon:longStorage 'false'^^xsd:boolean ;
+    emobon:failure 'false'^^xsd:boolean ;
+    emobon:sampleDepth '1'^^xsd:string ;
+    emobon:hasSampleSize '5.4'^^xsd:string ; 
+    emobon:filterSizeRange '0.2-3'^^xsd:string ;
+    emobon:upperFilterSize '3'^^xsd:string ; 
+    emobon:lowerFilterSize '0.2'^^xsd:string ; 
+    emobon:filtrationTime '0.5'^^xsd:string ;
+    emobon:membrCut 'true'^^xsd:boolean ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '1874687'^^xsd:anyURI ; 
+    sosa:isSampleOf ''^^xsd:string ;
+
+    
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Eva Lopes; Ana Gomes'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Catarina Magalhães'^^xsd:string ;
+        schema:identifier '0000-0001-9576-2398'^^xsd:anyURI ;
+    ] , [
+        a prov:Person, schema:Person ;
+    ] ; 
+    prov:wasGeneratedBy [
+        a prov:Activity ;
+        dct:type "storage"^^xsd:string ; 
+        dct:description "Storage of sample at sequencing centre for subsequent DNA sequencing"^^xsd:string ; 
+        prov:startedAtTime 'NA'^^xsd:string ; 
+        
+        prov:wasInformedBy [
+            
+            a prov:Activity ;
+            dct:type "transport"^^xsd:string ; 
+            dct:description "Shipping of sample from HMBRC HQ to sequencing centre"^^xsd:string ; 
+            prov:startedAtTime 'NA'^^xsd:string ;
+            prov:endedAtTime 'NA'^^xsd:string ;
+            
+            prov:wasInformedBy [
+                
+                a prov:Activity ;
+                dct:type "storage"^^xsd:string ; 
+                dct:description "Storage of sample at HMBRC HQ"^^xsd:string ; 
+                prov:startedAtTime '2023-06-20'^^xsd:string ;
+                emobon:storageTemp '-70'^^xsd:string ; 
+
+                prov:wasInformedBy [
+                    
+                    a prov:Activity ;
+                    dct:type "transport"^^xsd:string ; 
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ; 
+                    prov:startedAtTime '2023-06-19'^^xsd:string ;
+                    prov:endedAtTime '2023-06-20'^^xsd:string ; 
+                    
+                    prov:wasInformedBy [
+                        a prov:Activity ;
+                        dct:type "storage"^^xsd:string ; 
+                        dct:description "Local storage of the collected sample"^^xsd:string ; 
+                        prov:startedAtTime '2023-04-17'^^xsd:string ;
+                        prov:wasAssociatedWith [
+                            a prov:Person, schema:Person ;
+                            schema:name 'Catarina Magalhães'^^xsd:string ;
+                            schema:identifier '0000-0001-9576-2398'^^xsd:anyURI ;
+                        ] ;
+                        emobon:storageTemp '-80'^^xsd:string ; 
+                        emobon:storageLoc 'CIIMAR - EcoBioTec New -80ºC Freezer'^^xsd:string ;
+                        prov:wasInformedBy <> ; 
+                    ] ; 
+                ] ; 
+            ] ; 
+        ] ; 
+    ] ;
+.
+
