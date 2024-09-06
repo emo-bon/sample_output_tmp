@@ -1,0 +1,114 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+@base <http://data.emobon.embrc.eu/observatory-lmo-crate/water/sampling/EMOBON_LMO_Wa_240206_200um_4> . </observatory-lmo-crate/water/sampling/LMO_Wa_240206>
+    a sosa:Sampling, prov:Activity ;  
+    
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime '2024-02-06'^^xsd:string ; 
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Danilo Di Leo; Kristofer Bergström'^^xsd:string ;
+    ] ;
+    
+    sosa:resultTime '2024-02-06'^^xsd:string ;     
+    sosa:madeBySampler 'Ruttner'^^xsd:string ;
+    sosa:usedProcedure [
+        a sosa:Procedure ;
+        rdfs:label 'WaSOP 1'^^xsd:string ;
+        rdfs:comment 'peristaltic pump'^^xsd:string ;
+        ] ;
+    emobon:tidalStage 'no_tide'^^xsd:string ;
+    emobon:samplingDepth '2.0'^^xsd:string ; 
+    emobon:waterColumnDepth '41'^^xsd:string ; 
+    emobon:originCountry 'Sweden'^^xsd:string ;
+    
+    sosa:hasFeatureOfInterest 'seawater [ENVO:00002149]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:hasFeatureOfInterest 'metagenome'^^xsd:string ;
+    sosa:hasFeatureOfInterest ''^^xsd:anyURI ; 
+    sosa:hasFeatureOfInterest ''^^xsd:string ;
+    
+    sosa:hasResult </observatory-lmo-crate/water/measured/EMOBON_LMO_Wa_240206_200um_4> ;
+.
+</observatory-lmo-crate/water/measured/EMOBON_LMO_Wa_240206_200um_4>
+    a sosa:Sample, prov:Entity ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ; 
+    
+    sosa:hasResult <> ;
+.
+<> 
+    a sosa:Sample, prov:Entity ;
+    
+    rdfs:label 'EMO BON LMO 387 Wa 240206 3um (4)'^^xsd:string ;
+    dct:description 'EMOBON metagenome water sample from station LMO collected on 2024-02-06 size fraction 3-200um'^^xsd:string ;
+    emobon:enaSampleAccNum ''^^xsd:anyURI ;
+    emobon:sampleReplicate '4'^^xsd:string ;
+    emobon:failure 'false'^^xsd:boolean ;
+    emobon:sampleDepth '2.0'^^xsd:string ;
+    emobon:hasSampleSize '9.0'^^xsd:string ; 
+    emobon:filterSizeRange '3-200'^^xsd:string ;
+    emobon:upperFilterSize '200.0'^^xsd:string ; 
+    emobon:lowerFilterSize '3.0'^^xsd:string ; 
+    emobon:filtrationTime '1.0'^^xsd:string ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf ''^^xsd:anyURI ; 
+    sosa:isSampleOf ''^^xsd:string ;
+
+    
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Danilo Di Leo; Kristofer Bergström'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Camilla Karlsson'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Sabina Arnautovic'^^xsd:string ;
+    ] ; 
+    prov:wasGeneratedBy [
+        
+        a prov:Activity ;
+        dct:type "storage"^^xsd:string ; 
+        dct:description "Storage of sample at HMBRC HQ"^^xsd:string ; 
+        prov:startedAtTime ''^^xsd:string ;
+        emobon:storageTemp ''^^xsd:string ; 
+
+        prov:wasInformedBy [
+            
+            a prov:Activity ;
+            dct:type "transport"^^xsd:string ; 
+            dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ; 
+            prov:startedAtTime ''^^xsd:string ;
+            prov:endedAtTime ''^^xsd:string ; 
+            
+            prov:wasInformedBy [
+                a prov:Activity ;
+                dct:type "storage"^^xsd:string ; 
+                dct:description "Local storage of the collected sample"^^xsd:string ; 
+                prov:startedAtTime '2024-02-06'^^xsd:string ;
+                prov:wasAssociatedWith [
+                    a prov:Person, schema:Person ;
+                    schema:name 'Camilla Karlsson'^^xsd:string ;
+                ] ;
+                emobon:storageTemp '-80'^^xsd:string ; 
+                emobon:storageLoc 'EEMiS lab 4041a, J.Pinhassi freezer'^^xsd:string ;
+                prov:wasInformedBy <> ; 
+            ] ; 
+        ] ; 
+    ] ;
+.
+

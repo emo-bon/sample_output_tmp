@@ -1,0 +1,96 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+
+
+@base <http://data.emobon.embrc.eu/observatory-roskogo-crate/sediment/sampling/EMOBON_ROSKOGO_So_230215_micro_4> . 
+</observatory-roskogo-crate/sediment/sampling/ROSKOGO_So_230215> 
+    a sosa:Sampling, prov:Activity ;  
+    
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime '2023-02-15'^^xsd:string ; 
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Comtet Camusat Thomas'^^xsd:string ;
+    ] ;
+    
+    sosa:resultTime '2023-02-15'^^xsd:string ; 
+    sosa:madeBySampler 'core'^^xsd:string ;
+    sosa:usedProcedure [
+        a sosa:Procedure ;
+        rdfs:label 'SoSOP2'^^xsd:string ;
+        rdfs:comment ''^^xsd:string ;
+        ] ;
+    emobon:tidalStage 'high_tide'^^xsd:string ;
+    emobon:samplingDepth ''^^xsd:string ; 
+    emobon:waterColumnDepth '18'^^xsd:string ; 
+    emobon:originCountry 'France'^^xsd:string ;
+    
+    sosa:hasFeatureOfInterest 'sediment [ENVO:00002007]'^^xsd:string;
+    sosa:hasFeatureOfInterest 'metagenome'^^xsd:string ;
+    sosa:hasFeatureOfInterest '412755'^^xsd:anyURI ; 
+    sosa:hasFeatureOfInterest 'micro'^^xsd:string ;
+    
+    sosa:hasResult </observatory-roskogo-crate/sediment/measured/EMOBON_ROSKOGO_So_230215_micro_4> ;
+.
+</observatory-roskogo-crate/sediment/measured/EMOBON_ROSKOGO_So_230215_micro_4>
+    a sosa:Sample, prov:Entity ;
+    
+    sosa:isSampleOf 'sediment [ENVO:00002007]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '412755'^^xsd:anyURI ; 
+    sosa:isSampleOf 'micro'^^xsd:string ;
+    
+    sosa:hasResult <> ;
+.
+<> 
+    a sosa:Sample, prov:Entity ;
+    
+    rdfs:label 'EMOBON ROSKOGO So230215 micro 4'^^xsd:string ;
+    dct:description 'EMOBON metagenome sediment sample from station ROSKOGO collected on 2023-02-15 community collected micro'^^xsd:string ;
+    emobon:sampleReplicate '4'^^xsd:string ;
+    emobon:longStorage 'true'^^xsd:boolean ;
+    emobon:failure 'false'^^xsd:boolean ;
+    emobon:sampleDepth ''^^xsd:string ;
+    emobon:hasSampleSize '10'^^xsd:string ; 
+    emobon:filterSizeRange ''^^xsd:string ;
+    
+    sosa:isSampleOf'sediment [ENVO:00002007]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '412755'^^xsd:anyURI ; 
+    sosa:isSampleOf 'micro'^^xsd:string ;
+
+    
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Comtet Camusat Thomas'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Comtet'^^xsd:string ;
+    ]  ; 
+    prov:wasGeneratedBy [
+        a prov:Activity ;
+        dct:type "storage"^^xsd:string ; 
+        dct:description "Local storage of the collected sample"^^xsd:string ; 
+        prov:startedAtTime '2023-02-15'^^xsd:string ;
+        prov:wasAssociatedWith [
+            a prov:Person, schema:Person ;
+            schema:name 'Comtet'^^xsd:string ;
+        ] ;
+        emobon:storageTemp '-80'^^xsd:string ; 
+        emobon:storageLoc 'SBR YD001 freezer 17'^^xsd:string ;
+        prov:wasInformedBy <> ;
+    ] ;
+.
+

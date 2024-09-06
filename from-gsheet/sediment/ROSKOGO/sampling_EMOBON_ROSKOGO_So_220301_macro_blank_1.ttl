@@ -1,0 +1,99 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+
+
+@base <http://data.emobon.embrc.eu/observatory-roskogo-crate/sediment/sampling/EMOBON_ROSKOGO_So_220301_macro_blank_1> . 
+</observatory-roskogo-crate/sediment/sampling/ROSKOGO_So_220301> 
+    a sosa:Sampling, prov:Activity ;  
+    
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime '2022-03-01'^^xsd:string ; 
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Houbin, Daguin, Comtet'^^xsd:string ;
+        schema:identifier '0000-0002-4572-3371'^^xsd:anyURI ;
+    ] ;
+    
+    sosa:resultTime '2022-03-01'^^xsd:string ; 
+    sosa:madeBySampler 'swab'^^xsd:string ;
+    sosa:usedProcedure [
+        a sosa:Procedure ;
+        rdfs:label 'SoSOP3'^^xsd:string ;
+        rdfs:comment ''^^xsd:string ;
+        ] ;
+    emobon:tidalStage 'ebb_tide'^^xsd:string ;
+    emobon:samplingDepth '17'^^xsd:string ; 
+    emobon:waterColumnDepth '18'^^xsd:string ; 
+    emobon:originCountry 'France'^^xsd:string ;
+    
+    sosa:hasFeatureOfInterest 'swab'^^xsd:string;
+    sosa:hasFeatureOfInterest 'mimarks-specimen'^^xsd:string ;
+    sosa:hasFeatureOfInterest '32644'^^xsd:anyURI ; 
+    sosa:hasFeatureOfInterest 'macro'^^xsd:string ;
+    
+    sosa:hasResult </observatory-roskogo-crate/sediment/measured/EMOBON_ROSKOGO_So_220301_macro_blank_1> ;
+.
+</observatory-roskogo-crate/sediment/measured/EMOBON_ROSKOGO_So_220301_macro_blank_1>
+    a sosa:Sample, prov:Entity ;
+    
+    sosa:isSampleOf 'swab'^^xsd:string;
+    sosa:isSampleOf 'mimarks-specimen'^^xsd:string ;
+    sosa:isSampleOf '32644'^^xsd:anyURI ; 
+    sosa:isSampleOf 'macro'^^xsd:string ;
+    
+    sosa:hasResult <> ;
+.
+<> 
+    a sosa:Sample, prov:Entity ;
+    
+    rdfs:label 'EMOBON ROSKOGO So220301 Macro blank'^^xsd:string ;
+    dct:description 'EMOBON mimarks-specimen sediment sample from station ROSKOGO collected on 2022-03-01 community collected macro'^^xsd:string ;
+    emobon:sampleReplicate 'blank_1'^^xsd:string ;
+    emobon:longStorage 'true'^^xsd:boolean ;
+    emobon:failure 'false'^^xsd:boolean ;
+    emobon:sampleDepth '17'^^xsd:string ;
+    emobon:filterSizeRange ''^^xsd:string ;
+    
+    sosa:isSampleOf'swab'^^xsd:string;
+    sosa:isSampleOf 'mimarks-specimen'^^xsd:string ;
+    sosa:isSampleOf '32644'^^xsd:anyURI ; 
+    sosa:isSampleOf 'macro'^^xsd:string ;
+
+    
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Houbin, Daguin, Comtet'^^xsd:string ;
+        schema:identifier '0000-0002-4572-3371'^^xsd:anyURI ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Céline Houbin'^^xsd:string ;
+        schema:identifier '0000-0002-4572-3371'^^xsd:anyURI ;
+    ]  ; 
+    prov:wasGeneratedBy [
+        a prov:Activity ;
+        dct:type "storage"^^xsd:string ; 
+        dct:description "Local storage of the collected sample"^^xsd:string ; 
+        prov:startedAtTime '2022-03-03'^^xsd:string ;
+        prov:wasAssociatedWith [
+            a prov:Person, schema:Person ;
+            schema:name 'Céline Houbin'^^xsd:string ;
+            schema:identifier '0000-0002-4572-3371'^^xsd:anyURI ;
+        ] ;
+        emobon:storageTemp '4'^^xsd:string ; 
+        emobon:storageLoc 'SBR YD101.2 fridge R10'^^xsd:string ;
+        prov:wasInformedBy <> ;
+    ] ;
+.
+

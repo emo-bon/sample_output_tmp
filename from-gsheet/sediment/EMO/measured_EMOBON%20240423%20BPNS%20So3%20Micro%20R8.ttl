@@ -1,0 +1,32 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+
+@base <http://data.emobon.embrc.eu/observatory-bpns-crate/sediment/measured/EMOBON 240423 BPNS So3 Micro R8> . 
+
+<#redox_potential>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P09/current/REDS/> ;
+        rdfs:label 'redox_potential'^^xsd:string ; 
+    ] ;
+    
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/UUMV/> ;
+    ] ;
+    schema:measurementTechnique 'ΝΑ'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.

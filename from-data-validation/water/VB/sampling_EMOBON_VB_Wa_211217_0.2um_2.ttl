@@ -1,0 +1,131 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+@base <http://data.emobon.embrc.eu/observatory-vb-crate/water/sampling/EMOBON_VB_Wa_211217_0.2um_2> . </observatory-vb-crate/water/sampling/VB_Wa_211217>
+    a sosa:Sampling, prov:Activity ;  
+    
+    dct:type "sampling"^^xsd:string ;
+    prov:startedAtTime '2021-12-17'^^xsd:string ; 
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Louis Caray--Counil'^^xsd:string ;
+    ] ;
+    
+    sosa:resultTime '2021-12-17'^^xsd:string ;     
+    sosa:madeBySampler 'Niskin'^^xsd:string ;
+    sosa:usedProcedure [
+        a sosa:Procedure ;
+        rdfs:label 'WaSOP 1'^^xsd:string ;
+        rdfs:comment 'bleach'^^xsd:string ;
+        ] ;
+    emobon:tidalStage 'no_tide'^^xsd:string ;
+    emobon:samplingDepth '1'^^xsd:string ; 
+    emobon:waterColumnDepth '80'^^xsd:string ; 
+    emobon:originCountry 'France'^^xsd:string ;
+    
+    sosa:hasFeatureOfInterest 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:hasFeatureOfInterest 'metagenome'^^xsd:string ;
+    sosa:hasFeatureOfInterest '1874687'^^xsd:anyURI ; 
+    sosa:hasFeatureOfInterest ''^^xsd:string ;
+    
+    sosa:hasResult </observatory-vb-crate/water/measured/EMOBON_VB_Wa_211217_0.2um_2> ;
+.
+</observatory-vb-crate/water/measured/EMOBON_VB_Wa_211217_0.2um_2>
+    a sosa:Sample, prov:Entity ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '1874687'^^xsd:anyURI ; 
+    
+    sosa:hasResult <> ;
+.
+<> 
+    a sosa:Sample, prov:Entity ;
+    
+    rdfs:label 'EMO BON VB 211217 Wa 0.2µm (2)'^^xsd:string ;
+    dct:description 'EMOBON metagenome water sample from station VB collected on 2021-12-17 size fraction 0.2-3um'^^xsd:string ;
+    emobon:enaSampleAccNum ''^^xsd:anyURI ;
+    emobon:sampleReplicate '2'^^xsd:string ;
+    emobon:sampleDepth '1'^^xsd:string ;
+    emobon:hasSampleSize '13.0'^^xsd:string ; 
+    emobon:filterSizeRange ''^^xsd:string ;
+    emobon:upperFilterSize '3.0'^^xsd:string ; 
+    emobon:lowerFilterSize '0.2'^^xsd:string ; 
+    emobon:filtrationTime '''<class 'float'>'''^^xsd:string ;
+    
+    sosa:isSampleOf 'seawater [ENVO:00002149]'^^xsd:string, 'coastal sea water [ENVO:00002150]'^^xsd:string, 'surface water [ENVO:00002042]'^^xsd:string;
+    sosa:isSampleOf 'metagenome'^^xsd:string ;
+    sosa:isSampleOf '1874687'^^xsd:anyURI ; 
+    sosa:isSampleOf ''^^xsd:string ;
+
+    
+    prov:wasAssociatedWith [
+        a prov:Person, schema:Person ;
+        schema:name 'Louis Caray--Counil'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Louis Caray--Counil'^^xsd:string ;
+    ] , [
+        a prov:Person, schema:Person ;
+        schema:name 'Cecile Fauvelot'^^xsd:string ;
+        schema:identifier '0000-0003-0806-1222'^^xsd:anyURI ;
+    ] ; 
+    prov:wasGeneratedBy [
+        a prov:Activity ;
+        dct:type "storage"^^xsd:string ; 
+        dct:description "Storage of sample at sequencing centre for subsequent DNA sequencing"^^xsd:string ; 
+        prov:startedAtTime '2022-02-23'^^xsd:string ; 
+        
+        prov:wasInformedBy [
+            
+            a prov:Activity ;
+            dct:type "transport"^^xsd:string ; 
+            dct:description "Shipping of sample from HMBRC HQ to sequencing centre"^^xsd:string ; 
+            prov:startedAtTime '2022-02-22'^^xsd:string ;
+            prov:endedAtTime '2022-02-23'^^xsd:string ;
+            
+            prov:wasInformedBy [
+                
+                a prov:Activity ;
+                dct:type "storage"^^xsd:string ; 
+                dct:description "Storage of sample at HMBRC HQ"^^xsd:string ; 
+                prov:startedAtTime '2022-01-25'^^xsd:string ;
+                emobon:storageTemp '-70.0'^^xsd:string ; 
+
+                prov:wasInformedBy [
+                    
+                    a prov:Activity ;
+                    dct:type "transport"^^xsd:string ; 
+                    dct:description "Shipping of sample to HMBRC HQ"^^xsd:string ; 
+                    prov:startedAtTime '2022-01-17'^^xsd:string ;
+                    prov:endedAtTime '2022-01-25'^^xsd:string ; 
+                    
+                    prov:wasInformedBy [
+                        a prov:Activity ;
+                        dct:type "storage"^^xsd:string ; 
+                        dct:description "Local storage of the collected sample"^^xsd:string ; 
+                        prov:startedAtTime '2021-12-17'^^xsd:string ;
+                        prov:wasAssociatedWith [
+                            a prov:Person, schema:Person ;
+                            schema:name 'Louis Caray--Counil'^^xsd:string ;
+                        ] ;
+                        emobon:storageTemp '-80.0'^^xsd:string ; 
+                        emobon:storageLoc '-80°C galeriens 1st shelf left'^^xsd:string ;
+                        prov:wasInformedBy <> ; 
+                    ] ; 
+                ] ; 
+            ] ; 
+        ] ; 
+    ] ;
+.
+

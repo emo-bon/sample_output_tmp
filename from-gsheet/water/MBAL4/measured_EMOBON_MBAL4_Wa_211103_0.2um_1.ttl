@@ -1,0 +1,237 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . 
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> . 
+@prefix prov: <http://www.w3.org/ns/prov#> . 
+@prefix sosa: <http://www.w3.org/ns/sosa/> . 
+@prefix ssn: <http://www.w3.org/ns/ssn/> . 
+@prefix qudt: <http://qudt.org/schema/qudt/> . 
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix mr: <http://marineregions.org/ns/ontology#> .
+@prefix emobon: <http://www.embrc.eu/emobon/EmoBonOntology#> .
+
+
+@base <http://data.emobon.embrc.eu/observatory-mbal4-crate/water/measured/EMOBON_MBAL4_Wa_211103_0.2um_1> . 
+
+<#ammonium>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P35/current/EPC00009/> ;
+        rdfs:label 'ammonium'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/, 5-channel Bran and Luebbe segmented flow system following MANTOURA, R.F.C, and WOODWARD, E.M.S., (1983). Estuarine, Coastal and Shelf Science, (1983), 17, 219-224.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#conduc>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P01/current/CNDCZZ01/> ;
+        rdfs:label 'conduc'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/MSCM/> ; 
+    ] ;
+    schema:measurementTechnique 'Valeport MIDAS 606 CTD (with a passive flow induction cell, Platinum Resistance Thermometer and a Temperature Compensated Piezo-Resistive Sensor ) with titanium housing. Full equipment specification is described by Valeport Ltd., 2006. Data were extracted and processed using Valeport DataLogX2 software (version1.0.4.1270). Manufacturer calibrations were applied to the direct measurements and parameters were derived using the in-built functions in the software Datalog X2.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#density>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P02/current/SIGT/> ;
+        rdfs:label 'density'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGMC/> ; 
+    ] ;
+    schema:measurementTechnique 'Valeport MIDAS 606 CTD (with a passive flow induction cell, Platinum Resistance Thermometer and a Temperature Compensated Piezo-Resistive Sensor ) with titanium housing. Full equipment specification is described by Valeport Ltd., 2006. Data were extracted and processed using Valeport DataLogX2 software (version1.0.4.1270). Manufacturer calibrations were applied to the direct measurements and parameters were derived using the in-built functions in the software Datalog X2.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#diss_oxygen>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P01/current/DOXMZZXX/> ;
+        rdfs:label 'diss_oxygen'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/ collected using oxygen optode,  data from 2 m'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#nitrate>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P01/current/NTRAZZXX/> ;
+        rdfs:label 'nitrate'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/, 5-channel Bran and Luebbe segmented flow system following BREWER and RILEY, 1965, Deep Sea Research, 12: 765 - 772.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#nitrite>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P01/current/NTRIZZXX/> ;
+        rdfs:label 'nitrite'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/, 5-channel Bran and Luebbe segmented flow system following A modified GRASSHOFF, K, (1976). Verlag chemie, Weiheim: pp. 317.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#phosphate>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P02/current/PHOS/> ;
+        rdfs:label 'phosphate'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/, 5-channel Bran and Luebbe segmented flow system following J-Z Zhang and J. Chi (2002), Env. Sci. and Tech., 36(5).'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#pigments>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/C67/current/PIGX/> ;
+        rdfs:label 'pigments'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGPL/> ; 
+    ] ;
+    schema:measurementTechnique '''this isn't pigments but fluorescence from https://www.westernchannelobservatory.org.uk/ collected using fluorometer, data from 2 m'''^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#sea_subsurf_salinity>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/A05/current/EV_SALIN/> ;
+        rdfs:label 'sea_subsurf_salinity'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UGKG/> ; 
+    ] ;
+    schema:measurementTechnique 'Valeport MIDAS 606 CTD (with a passive flow induction cell, Platinum Resistance Thermometer and a Temperature Compensated Piezo-Resistive Sensor ) with titanium housing. Full equipment specification is described by Valeport Ltd., 2006. Data were extracted and processed using Valeport DataLogX2 software (version1.0.4.1270). Manufacturer calibrations were applied to the direct measurements and parameters were derived using the in-built functions in the software Datalog X2.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#sea_subsurf_temp>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P02/current/TEMP/> ;
+        rdfs:label 'sea_subsurf_temp'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ; 
+    ] ;
+    schema:measurementTechnique 'Valeport MIDAS 606 CTD (with a passive flow induction cell, Platinum Resistance Thermometer and a Temperature Compensated Piezo-Resistive Sensor ) with titanium housing. Full equipment specification is described by Valeport Ltd., 2006. Data were extracted and processed using Valeport DataLogX2 software (version1.0.4.1270). Manufacturer calibrations were applied to the direct measurements and parameters were derived using the in-built functions in the software Datalog X2.'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#sea_surf_temp>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P02/current/TEMP/> ;
+        rdfs:label 'sea_surf_temp'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> ; 
+    ] ;
+    schema:measurementTechnique 'Thermometer'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#silicate>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P02/current/SLCA/> ;
+        rdfs:label 'silicate'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <http://vocab.nerc.ac.uk/collection/P06/current/UPOX/> ; 
+    ] ;
+    schema:measurementTechnique 'from https://www.westernchannelobservatory.org.uk/, 5-channel Bran and Luebbe segmented flow system following D.S. KIRKWOOD, ICES CM 1989/ C: 29'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
+
+<#turbidity>
+    a sosa:Observation, schema:Observation ;
+    sosa:observedProperty 
+        sosa:observedProperty [
+        a sosa:ObservableProperty ; 
+        dct:identifier <http://vocab.nerc.ac.uk/collection/P01/current/TURBXXXX/> ;
+        rdfs:label 'turbidity'^^xsd:string ; 
+    ] ;
+
+    sosa:hasResult [
+        a sosa:Result , qudt:QuantityValue ;
+        qudt:unit <https://vocab.nerc.ac.uk/collection/P06/current/USTU/> ; 
+    ] ;
+    schema:measurementTechnique 'Secchi disc'^^xsd:string ;
+    sosa:hasFeatureOfInterest <> ; 
+.
